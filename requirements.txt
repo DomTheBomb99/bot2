@@ -7,3 +7,4 @@ redis
 pydantic
 python-dotenv
 aiohttp
+pydantic-settings
