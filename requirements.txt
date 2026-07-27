@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+alpaca-trade-api
+sqlalchemy
+psycopg2-binary
+redis
+pydantic
+python-dotenv
+aiohttp
