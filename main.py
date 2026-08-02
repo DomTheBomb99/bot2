@@ -9,18 +9,22 @@ except Exception:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    print("Starting Trading Bot...")
+    from src.core.logger import setup_logger
+
+logger = setup_logger("Main")
 
     if redis_manager:
         try:
             await redis_manager.connect()
-            print("Redis connected.")
+            logger.info("Redis connected.")
         except Exception as e:
-            print(f"Redis unavailable: {e}")
+            logger.warning(f"Redis unavailable: {e}")
+    logger.info("Starting Trading Bot...")
+    
 
     yield
 
-    print("Trading Bot shutting down.")
+    logger.info("Trading Bot shutting down.")
 
 
 app = FastAPI(
