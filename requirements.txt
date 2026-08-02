@@ -8,3 +8,4 @@ pydantic
 python-dotenv
 aiohttp
 pydantic-settings
+websockets==13.1
